@@ -215,6 +215,60 @@ body.dark {
   color: var(--text-muted);
   line-height: 1.6;
 }
+/* ================= PROJECTS ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px;
+}
+
+.project-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 18px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.project-card p {
+  margin: 12px 0;
+  color: var(--text-muted);
+}
+
+.project-card ul {
+  margin: 14px 0;
+  padding-left: 18px;
+}
+
+.project-card li {
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.tech {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
 
 /* ================= CONTACT ================= */
 .contact {
