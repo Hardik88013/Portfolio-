@@ -6,101 +6,240 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark">
+<body class="light">
 
-<!-- PARTICLES -->
-<canvas id="particles"></canvas>
-
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="logo">&lt;Hardik /&gt;</div>
     <nav>
         <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#training">Training</a>
+        <a href="#internship">Internship</a>
         <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
         <button id="themeToggle">🌙</button>
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero" id="home">
     <div class="hero-text">
         <h1>Hi, I'm <span>Hardik</span></h1>
-        <h2 class="typing"></h2>
+        <h2 class="typing">Computer Science Undergraduate</h2>
+
         <p>
-            Computer Science undergraduate passionate about Java, Python,
-            Data Structures & Machine Learning. I build real-world solutions.
+            I am a Computer Science student passionate about Java, Python,
+            Data Structures, and Machine Learning. I enjoy building real-world
+            applications and solving complex problems efficiently.
         </p>
 
         <div class="hero-buttons">
             <a href="#projects" class="primary-btn">View My Work →</a>
-            <a href="assets/resume.pdf" class="secondary-btn" download>Download CV</a>
         </div>
 
         <div class="socials">
-            <a href="https://github.com/Hardik88013" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/hardik88013" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Hardik88013" target="_blank" class="social github">
+                🐙 GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/hardik88013" target="_blank" class="social linkedin">
+                💼 LinkedIn
+            </a>
         </div>
     </div>
 
     <div class="hero-image">
         <img src="assets/profile.jpg" alt="Hardik">
     </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="projects" id="projects">
-    <h2 class="section-title">Projects</h2>
+<!-- ================= SKILLS ================= -->
+<section class="skills" id="skills">
+    <h2 class="section-title">Skills</h2>
 
-    <div class="project-grid">
-        <div class="project-card">
-            <h3>Personal Expense Tracker</h3>
-            <p>
-                Java Swing desktop app using DSA concepts with filtering,
-                analytics, and persistent local storage.
-            </p>
-            <span>Java • Swing • DSA</span>
-            <a href="https://github.com/Hardik88013" target="_blank">GitHub →</a>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>Languages</h3>
+            <p>Java, Python, C++, C, JavaScript</p>
         </div>
 
-        <div class="project-card">
-            <h3>Crop Recommendation System</h3>
-            <p>
-                ML model using Linear Regression to recommend crops
-                based on soil nutrients and climate data.
-            </p>
-            <span>Python • Pandas • Scikit-learn</span>
-            <a href="https://github.com/Hardik88013" target="_blank">GitHub →</a>
+        <div class="skill-card">
+            <h3>Frameworks & Libraries</h3>
+            <p>HTML, CSS, NumPy, Pandas, Scikit-learn, Flask, Matplotlib</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Tools & Platforms</h3>
+            <p>Git, GitHub, MySQL, Linux, Docker</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Soft Skills</h3>
+            <p>Problem Solving, Team Player, Adaptability, Critical Thinking</p>
         </div>
     </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
+<!-- ================= PROJECTS ================= -->
+<section class="projects" id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <h3>Personal Expense Tracker</h3>
+            <p class="project-desc">
+                A Java-based desktop application designed to manage and analyze
+                daily expenses using core Data Structures & Algorithms.
+            </p>
+            <ul>
+                <li>Java Swing GUI with category-wise tracking</li>
+                <li>Filtering, sorting, and monthly summaries</li>
+                <li>Highest and lowest expense analysis</li>
+                <li>Persistent local storage without databases</li>
+            </ul>
+            <span class="tech">Java · DSA · Java Swing</span>
+            <a href="https://github.com/Hardik88013" target="_blank" class="project-link">
+                View on GitHub →
+            </a>
+        </div>
+
+        <div class="project-card">
+            <h3>Crop Recommendation System</h3>
+            <p class="project-desc">
+                A Machine Learning system that recommends crops based on
+                soil nutrients, rainfall, and climate parameters.
+            </p>
+            <ul>
+                <li>Implemented using Linear Regression</li>
+                <li>Data preprocessing & feature engineering</li>
+                <li>Model evaluation using R² and RMSE</li>
+                <li>User-friendly interface for predictions</li>
+            </ul>
+            <span class="tech">Python · Pandas · NumPy · Scikit-learn</span>
+            <a href="https://github.com/Hardik88013" target="_blank" class="project-link">
+                View on GitHub →
+            </a>
+        </div>
+
+        <div class="project-card">
+            <h3>House Price Prediction Web App</h3>
+            <p class="project-desc">
+                A Machine Learning web application that predicts house prices
+                using real-world housing datasets.
+            </p>
+            <ul>
+                <li>Built using Flask and regression models</li>
+                <li>Feature engineering & label encoding</li>
+                <li>Integrated ML model with web interface</li>
+                <li>Trained on Kaggle housing dataset</li>
+            </ul>
+            <span class="tech">Python · Flask · Machine Learning</span>
+            <a href="https://github.com/Hardik88013/SCT_ML_1" target="_blank" class="project-link">
+                View on GitHub →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= TRAINING ================= -->
+<section class="training" id="training">
+    <h2 class="section-title">Training</h2>
+
+    <div class="training-box">
+        <div class="training-card">
+            <h3>Java Bootcamp – Placement Ace</h3>
+            <span class="duration">
+                Centre for Professional Enhancement · Jun 2025 – Jul 2025
+            </span>
+            <ul>
+                <li>Strong foundation in Data Structures & Algorithms</li>
+                <li>Solved placement-oriented problems on LeetCode & Codeforces</li>
+                <li>Hands-on practice with trees, graphs, and DP</li>
+                <li>Improved problem-solving speed and accuracy</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ================= INTERNSHIP ================= -->
+<section class="internship" id="internship">
+    <h2 class="section-title">Internship Experience</h2>
+
+    <div class="internship-box">
+        <div class="internship-card">
+            <h3>Machine Learning Intern – SkillCraft Technology</h3>
+            <span class="duration">Remote · 2025</span>
+            <ul>
+                <li>Worked on real-world Machine Learning tasks</li>
+                <li>Built and evaluated ML models using Python</li>
+                <li>Hands-on experience with data preprocessing</li>
+                <li>Applied supervised learning algorithms</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
 <section class="achievements" id="achievements">
     <h2 class="section-title">Achievements</h2>
 
     <div class="timeline">
         <div class="timeline-item">
-            <h3>360+ LeetCode Problems</h3>
-            <p>13 badges earned with consistent DSA practice</p>
+            <h3>360+ LeetCode Problems Solved</h3>
+            <p>Earned 13 badges through consistent practice</p>
         </div>
+
         <div class="timeline-item">
-            <h3>80+ GeeksforGeeks Problems</h3>
-            <p>Strong algorithmic foundation</p>
+            <h3>80+ GeeksforGeeks Problems Solved</h3>
+            <p>Improved algorithmic thinking and problem-solving</p>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>📧 mehtahardik88013@gmail.com</p>
-    <p>📱 +91 9467230806</p>
+<!-- ================= EDUCATION ================= -->
+<section class="education" id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-box">
+        <div class="education-card">
+            <h3>Bachelor of Technology – Computer Science & Engineering</h3>
+            <span class="duration">Lovely Professional University, Punjab</span>
+            <p>Aug 2023 – Present</p>
+        </div>
+
+        <div class="education-card">
+            <h3>Intermediate (12th)</h3>
+            <span class="duration">Rajendra Public School, Sirsa</span>
+            <p>2021 – 2022</p>
+        </div>
+
+        <div class="education-card">
+            <h3>Matriculation (10th)</h3>
+            <span class="duration">Satluj Public School, Sirsa</span>
+            <p>2019 – 2020</p>
+        </div>
+    </div>
 </section>
 
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <strong>mehtahardik88013@gmail.com</strong></p>
+    <p>Phone: <strong>+91 9467230806</strong></p>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-    © 2026 Hardik | Built with LOVE and HTML/CSS/JS
+    © 2026 Hardik · All Rights Reserved
 </footer>
 
 <script src="script.js"></script>
