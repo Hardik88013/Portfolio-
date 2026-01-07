@@ -1,63 +1,128 @@
-/* TYPING EFFECT */
-const text = ["Java Developer", "Python Programmer", "ML & DSA Enthusiast"];
-let index = 0, char = 0;
+/* ============================
+   TYPING EFFECT (ONE AT A TIME)
+============================ */
+const roles = [
+  "Computer Science Undergraduate",
+  "Java Developer",
+  "Python Developer",
+  "C++ Programmer",
+  "ML & DSA Enthusiast",
+  "DevOps Learner"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
 const typing = document.querySelector(".typing");
 
-function type() {
-    if (char < text[index].length) {
-        typing.textContent += text[index][char++];
-        setTimeout(type, 80);
-    } else {
-        setTimeout(erase, 1500);
+function typeEffect() {
+  const text = roles[roleIndex];
+
+  if (!deleting) {
+    typing.textContent = text.slice(0, charIndex++);
+    if (charIndex > text.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1400);
+      return;
     }
+  } else {
+    typing.textContent = text.slice(0, --charIndex);
+    if (charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 50 : 90);
 }
 
-function erase() {
-    if (char > 0) {
-        typing.textContent = text[index].substring(0, --char);
-        setTimeout(erase, 50);
-    } else {
-        index = (index + 1) % text.length;
-        setTimeout(type, 300);
-    }
-}
-type();
+typeEffect();
 
-/* THEME TOGGLE */
+/* ============================
+   THEME TOGGLE (DARK/LIGHT)
+============================ */
 const toggle = document.getElementById("themeToggle");
+
 toggle.onclick = () => {
-    document.body.classList.toggle("light");
-    document.body.classList.toggle("dark");
-    toggle.textContent = document.body.classList.contains("dark") ? "🌙" : "☀️";
+  document.body.classList.toggle("dark");
+  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+};
+/* ============================
+   SCROLL REVEAL
+============================ */
+const reveals = document.querySelectorAll(".reveal");
+
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  reveals.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < triggerBottom) {
+      section.classList.add("show");
+    }
+  });
 };
 
-/* PARTICLES */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+/* ============================
+   COUNTER ANIMATION
+============================ */
+const counters = document.querySelectorAll(".counter");
 
-let particles = Array.from({ length: 80 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: Math.random() - 0.5,
-    dy: Math.random() - 0.5
-}));
+const runCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    let count = 0;
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    const update = () => {
+      const increment = Math.ceil(target / 80);
+      count += increment;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(99,102,241,0.6)";
-        ctx.fill();
-    });
-    requestAnimationFrame(animate);
-}
-animate();
+      if (count < target) {
+        counter.textContent = count;
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target;
+      }
+    };
+
+    update();
+  });
+};
+
+let counterStarted = false;
+window.addEventListener("scroll", () => {
+  const achievements = document.getElementById("achievements");
+  if (!achievements) return;
+
+  const top = achievements.getBoundingClientRect().top;
+  if (top < window.innerHeight && !counterStarted) {
+    runCounters();
+    counterStarted = true;
+  }
+});
+/* ============================
+   NAVBAR ACTIVE LINK
+============================ */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".navbar nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 140;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
