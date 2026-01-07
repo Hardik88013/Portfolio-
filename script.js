@@ -177,3 +177,48 @@ function animateStars() {
 }
 
 animateStars();
+/* ================= CERTIFICATE ROTATION ================= */
+
+const certificates = [
+  {
+    title: "Placement Ace: Java Bootcamp",
+    org: "Centre for Professional Enhancement, Lovely Professional University",
+    duration: "June 2025 – July 2025",
+    points: [
+      "Strengthened core Data Structures & Algorithms.",
+      "Solved competitive problems on LeetCode & Codeforces.",
+      "Improved problem-solving speed and coding efficiency."
+    ]
+  },
+  {
+    title: "Decode C++ with DSA",
+    org: "Physics Wallah (PW Skills)",
+    duration: "June 2024",
+    points: [
+      "Learned C++ fundamentals with strong DSA concepts.",
+      "Practiced arrays, recursion, stacks, queues, and trees.",
+      "Built a solid base for competitive programming."
+    ]
+  }
+];
+
+let certIndex = 0;
+const images = document.querySelectorAll(".certificate");
+
+const titleEl = document.getElementById("certTitle");
+const orgEl = document.getElementById("certOrg");
+const durationEl = document.getElementById("certDuration");
+const pointsEl = document.getElementById("certPoints");
+
+setInterval(() => {
+  images.forEach(img => img.classList.remove("active"));
+  certIndex = (certIndex + 1) % certificates.length;
+  images[certIndex].classList.add("active");
+
+  const cert = certificates[certIndex];
+  titleEl.textContent = cert.title;
+  orgEl.textContent = cert.org;
+  durationEl.textContent = cert.duration;
+
+  pointsEl.innerHTML = cert.points.map(p => `<li>${p}</li>`).join("");
+}, 5000); // change every 5 seconds
