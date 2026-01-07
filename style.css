@@ -16,6 +16,16 @@ body {
   overflow-x: hidden;
   transition: background 0.3s, color 0.3s;
 }
+/* ================= STAR BACKGROUND ================= */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
 
 /* ================= VARIABLES ================= */
 body.dark {
@@ -603,6 +613,87 @@ body.dark {
   transform: translateY(-8px);
   box-shadow: 0 25px 60px rgba(59,130,246,0.25);
 }
+/* ================= ACHIEVEMENTS ================= */
+.achievements {
+  padding: 120px 8%;
+  background: radial-gradient(circle at top, #0b1220, #020617);
+}
+
+.achievements .section-title span {
+  color: var(--accent);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+/* CARD */
+.achievement-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.35s ease;
+}
+
+/* IMAGE WRAPPER */
+.achievement-image {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.achievement-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.badge.leetcode {
+  background: linear-gradient(90deg, #f97316, #facc15);
+  color: #020617;
+}
+
+.badge.gfg {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  color: #020617;
+}
+
+/* TEXT */
+.achievement-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.achievement-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* HOVER */
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(59,130,246,0.35);
+}
+
 
 /* ================= CONTACT ================= */
 .contact {

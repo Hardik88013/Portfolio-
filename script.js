@@ -126,3 +126,54 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+/* ================= STAR BACKGROUND ================= */
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+let stars = [];
+
+function resizeCanvas() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+// create stars
+function createStars(count = 120) {
+  stars = [];
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 1.5 + 0.3,
+      speed: Math.random() * 0.15 + 0.05,
+      alpha: Math.random(),
+      blink: Math.random() * 0.02 + 0.005
+    });
+  }
+}
+createStars();
+
+// animate stars
+function animateStars() {
+  ctx.clearRect(0, 0, w, h);
+
+  stars.forEach(star => {
+    star.y += star.speed;
+    if (star.y > h) star.y = 0;
+
+    star.alpha += star.blink;
+    if (star.alpha <= 0 || star.alpha >= 1) star.blink *= -1;
+
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(147, 197, 253, ${star.alpha})`;
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animateStars);
+}
+
+animateStars();
