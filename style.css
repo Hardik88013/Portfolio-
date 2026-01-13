@@ -1254,3 +1254,28 @@ footer {
     justify-content: center;
   }
 }
+/* ================= GSSOC IMAGE WHITE BACKGROUND FIX ================= */
+.gsoc-card .achievement-image {
+  background: #ffffff;        /* ✅ FULL WHITE */
+  border-radius: 18px;
+  padding: 26px;
+  margin-bottom: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE */
+.gsoc-card .achievement-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  display: block;
+}
+.gsoc-card .achievement-image {
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.35),
+    inset 0 0 20px rgba(0,0,0,0.05);
+}
