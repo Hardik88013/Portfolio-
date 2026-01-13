@@ -15,7 +15,7 @@ let charIndex = 0;
 let deleting = false;
 
 const typing = document.querySelector(".typing");
-
+typing.textContent = " "; // reserve space before animation starts
 function typeEffect() {
   const text = roles[roleIndex];
 
