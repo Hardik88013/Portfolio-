@@ -1,85 +1,49 @@
 /* ============================
-   TYPING EFFECT (ONE AT A TIME)
-============================ */
-const roles = [
-  "Computer Science Undergraduate",
-  "Java Developer",
-  "Python Developer",
-  "C++ Programmer",
-  "ML & DSA Enthusiast",
-  "DevOps Learner"
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-const typing = document.querySelector(".typing");
-
-function typeEffect() {
-  const text = roles[roleIndex];
-
-  if (!deleting) {
-    typing.textContent = text.slice(0, charIndex++);
-    if (charIndex > text.length) {
-      deleting = true;
-      setTimeout(typeEffect, 1400);
-      return;
-    }
-  } else {
-    typing.textContent = text.slice(0, --charIndex);
-    if (charIndex === 0) {
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
-  }
-
-  setTimeout(typeEffect, deleting ? 50 : 90);
-}
-
-typeEffect();
-
-/* ============================
-   THEME TOGGLE (DARK/LIGHT)
+   THEME TOGGLE (DARK / LIGHT)
 ============================ */
 const toggle = document.getElementById("themeToggle");
 
-toggle.onclick = () => {
-  document.body.classList.toggle("dark");
-  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-};
+// Load saved preference
+const savedTheme = localStorage.getItem("theme") || "dark";
+document.body.className = savedTheme;
+toggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+
+toggle.addEventListener("click", () => {
+  const isDark = document.body.classList.contains("dark");
+  document.body.classList.remove("dark", "light");
+  document.body.classList.add(isDark ? "light" : "dark");
+  toggle.textContent = isDark ? "🌙" : "☀️";
+  localStorage.setItem("theme", isDark ? "light" : "dark");
+});
+
 /* ============================
    SCROLL REVEAL
 ============================ */
 const reveals = document.querySelectorAll(".reveal");
 
 const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-
-  reveals.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < triggerBottom) {
-      section.classList.add("show");
+  const triggerBottom = window.innerHeight * 0.88;
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < triggerBottom) {
+      el.classList.add("show");
     }
   });
 };
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
 /* ============================
    COUNTER ANIMATION
 ============================ */
-const counters = document.querySelectorAll(".counter");
-
-const runCounters = () => {
-  counters.forEach(counter => {
+function runCounters() {
+  document.querySelectorAll(".counter").forEach(counter => {
     const target = +counter.dataset.target;
     let count = 0;
 
     const update = () => {
-      const increment = Math.ceil(target / 80);
+      const increment = Math.ceil(target / 70);
       count += increment;
-
       if (count < target) {
         counter.textContent = count;
         requestAnimationFrame(update);
@@ -90,19 +54,18 @@ const runCounters = () => {
 
     update();
   });
-};
+}
 
 let counterStarted = false;
 window.addEventListener("scroll", () => {
   const achievements = document.getElementById("achievements");
   if (!achievements) return;
-
-  const top = achievements.getBoundingClientRect().top;
-  if (top < window.innerHeight && !counterStarted) {
+  if (achievements.getBoundingClientRect().top < window.innerHeight && !counterStarted) {
     runCounters();
     counterStarted = true;
   }
 });
+
 /* ============================
    NAVBAR ACTIVE LINK
 ============================ */
@@ -111,10 +74,8 @@ const navLinks = document.querySelectorAll(".navbar nav a");
 
 window.addEventListener("scroll", () => {
   let current = "";
-
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 140;
-    if (scrollY >= sectionTop) {
+    if (scrollY >= section.offsetTop - 160) {
       current = section.getAttribute("id");
     }
   });
@@ -126,22 +87,22 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-/* ================= STAR BACKGROUND ================= */
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
 
-let w, h;
-let stars = [];
+/* ============================
+   STAR BACKGROUND (DARK ONLY)
+============================ */
+const canvas = document.getElementById("stars");
+const ctx    = canvas.getContext("2d");
+let w, h, stars = [];
 
 function resizeCanvas() {
-  w = canvas.width = window.innerWidth;
+  w = canvas.width  = window.innerWidth;
   h = canvas.height = window.innerHeight;
 }
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// create stars
-function createStars(count = 120) {
+function createStars(count = 130) {
   stars = [];
   for (let i = 0; i < count; i++) {
     stars.push({
@@ -156,69 +117,159 @@ function createStars(count = 120) {
 }
 createStars();
 
-// animate stars
 function animateStars() {
   ctx.clearRect(0, 0, w, h);
 
-  stars.forEach(star => {
-    star.y += star.speed;
-    if (star.y > h) star.y = 0;
-
-    star.alpha += star.blink;
-    if (star.alpha <= 0 || star.alpha >= 1) star.blink *= -1;
-
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(147, 197, 253, ${star.alpha})`;
-    ctx.fill();
-  });
+  // Only draw stars if dark mode
+  if (document.body.classList.contains("dark")) {
+    stars.forEach(star => {
+      star.y += star.speed;
+      if (star.y > h) star.y = 0;
+      star.alpha += star.blink;
+      if (star.alpha <= 0 || star.alpha >= 1) star.blink *= -1;
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(147, 197, 253, ${star.alpha})`;
+      ctx.fill();
+    });
+  }
 
   requestAnimationFrame(animateStars);
 }
-
 animateStars();
-/* ================= CERTIFICATE ROTATION ================= */
 
-const certificates = [
-  {
-    title: "Placement Ace: Java Bootcamp",
-    org: "Centre for Professional Enhancement, Lovely Professional University",
-    duration: "June 2025 – July 2025",
-    points: [
-      "Strengthened core Data Structures & Algorithms.",
-      "Solved competitive problems on LeetCode & Codeforces.",
-      "Improved problem-solving speed and coding efficiency."
-    ]
-  },
-  {
-    title: "Decode C++ with DSA",
-    org: "Physics Wallah (PW Skills)",
-    duration: "June 2024",
-    points: [
-      "Learned C++ fundamentals with strong DSA concepts.",
-      "Practiced arrays, recursion, stacks, queues, and trees.",
-      "Built a solid base for competitive programming."
-    ]
-  }
+/* ============================
+   ACHIEVEMENT TABS
+============================ */
+const tabBtns = document.querySelectorAll(".tab-btn");
+const tabPanes = document.querySelectorAll(".tab-pane");
+
+tabBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.tab;
+
+    // Update buttons
+    tabBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Update panes
+    tabPanes.forEach(p => p.classList.remove("active"));
+    const activePane = document.getElementById(`tab-${target}`);
+    if (activePane) activePane.classList.add("active");
+
+    // Re-run counters if switching to coding or gfg tab
+    counterStarted = false;
+    runCounters();
+  });
+});
+
+/* ============================
+   RESUME TABS
+============================ */
+const resTabBtns = document.querySelectorAll(".resume-tab-btn");
+const resTabPanes = document.querySelectorAll(".resume-pane");
+
+resTabBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.tab;
+
+    // Update buttons
+    resTabBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Update panes
+    resTabPanes.forEach(p => p.classList.remove("active"));
+    const activePane = document.getElementById(target);
+    if (activePane) activePane.classList.add("active");
+  });
+});
+
+/* ============================
+   CERTIFICATE LIGHTBOX
+============================ */
+function openLightbox(src, caption) {
+  // Only open if image actually exists (not placeholder)
+  const lb = document.getElementById("certLightbox");
+  const img = document.getElementById("lightboxImg");
+  const cap = document.getElementById("lightboxCaption");
+
+  img.src = src;
+  cap.textContent = caption;
+  lb.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  const lb = document.getElementById("certLightbox");
+  lb.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+// Close lightbox with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
+
+/* ============================
+   TYPING EFFECT (HERO)
+============================ */
+const typingElement = document.getElementById("typing-text");
+const roles = [
+  "Computer Science Undergraduate",
+  "Java Developer",
+  "Python Developer",
+  "C++ Programmer",
+  "ML & DSA Enthusiast",
+  "DevOps Learner"
 ];
 
-let certIndex = 0;
-const images = document.querySelectorAll(".certificate");
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typeSpeed = 100;
 
-const titleEl = document.getElementById("certTitle");
-const orgEl = document.getElementById("certOrg");
-const durationEl = document.getElementById("certDuration");
-const pointsEl = document.getElementById("certPoints");
+function type() {
+  const currentRole = roles[roleIndex];
+  
+  if (isDeleting) {
+    typingElement.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+    typeSpeed = 50;
+  } else {
+    typingElement.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+    typeSpeed = 120;
+  }
 
-setInterval(() => {
-  images.forEach(img => img.classList.remove("active"));
-  certIndex = (certIndex + 1) % certificates.length;
-  images[certIndex].classList.add("active");
+  if (!isDeleting && charIndex === currentRole.length) {
+    isDeleting = true;
+    typeSpeed = 2000; // Pause at end
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    typeSpeed = 500;
+  }
 
-  const cert = certificates[certIndex];
-  titleEl.textContent = cert.title;
-  orgEl.textContent = cert.org;
-  durationEl.textContent = cert.duration;
+  setTimeout(type, typeSpeed);
+}
 
-  pointsEl.innerHTML = cert.points.map(p => `<li>${p}</li>`).join("");
-}, 5000); // change every 5 seconds
+/* ============================
+   ASHIRWAD MEDICOS SLIDER
+============================ */
+function initAshirwadSlider() {
+  const slider = document.querySelector('.ashirwad-slider');
+  if (!slider) return;
+  const slides = slider.querySelectorAll('img');
+  let current = 0;
+  
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 2000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  type();
+  initAshirwadSlider();
+});

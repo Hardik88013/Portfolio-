@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <title>Hardik | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hardik Mehta – AI/ML Engineer Portfolio. Explore projects, skills, certificates and achievements." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
 <body class="dark">
@@ -14,182 +18,297 @@
 <header class="navbar">
   <div class="logo">Hardik</div>
   <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <button id="themeToggle">☀️</button>
+    <a href="#home" class="active">🏠 Home</a>
+    <a href="#about">👨‍💻 About</a>
+    <a href="#skills">🛠️ Skills</a>
+    <a href="#projects">🚀 Projects</a>
+    <a href="#training">📜 Certificates</a>
+    <a href="#achievements">🏆 Achievements</a>
+    <a href="#education">🎓 Education</a>
+    <a href="#resume">📄 Resume</a>
+    <a href="#contact">📧 Contact</a>
+    <button id="themeToggle" aria-label="Toggle theme">☀️</button>
   </nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
   <div class="hero-left">
-    <h1>
-      Hi, I’m <span>Hardik</span><br />
-      <span class="typing"></span>
+    <p class="greeting">Hi I am</p>
+    <h2 class="name-title">Hardik Mehta</h2>
+    <h1 class="role-title">
+      <span id="typing-text"></span><span class="cursor">|</span>
     </h1>
-
-    <!-- Tagline -->
-    <p class="about-tagline">
-      Turning concepts into practical solutions through code, logic, and continuous learning.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#about" class="btn primary">About Me</a>
-      <a href="#contact" class="btn outline">Contact</a>
+    <p class="hero-tagline">Turning concepts into practical solutions through code, logic, and continuous learning.</p>
+    
+    <div class="hero-socials">
+      <a href="mailto:mehtahardik88013@gmail.com" target="_blank" title="Email">✉</a>
+      <a href="https://linkedin.com/in/hardik88013" target="_blank" title="LinkedIn">💼</a>
+      <a href="https://github.com/Hardik88013" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
     </div>
+
+    <div class="hero-actions-new">
+      <a href="#contact" class="btn primary">Hire Me</a>
+      <a href="#about" class="btn outline">About Me</a>
+      <a href="assets/hardik cv.pdf" download class="btn primary">Download CV</a>
+    </div>
+
   </div>
 
   <div class="hero-right">
-    <div class="hero-circle">
-      <img src="assets/profile.jpg" alt="Hardik" />
+    <div class="hero-circle-new">
+      <img src="assets/profile_nobg.png" alt="Hardik" />
     </div>
   </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
-<section class="section reveal" id="about">
+<section class="section" id="about">
   <h2 class="section-title">About <span>Me</span></h2>
 
-  <div class="about-layout">
+  <div class="about-grid-new">
+    
+    <!-- LEFT SIDEBAR -->
+    <div class="about-sidebar">
+      <!-- Quick Facts -->
+      <div class="about-card">
+        <h3>Quick Facts</h3>
+        
+        <div class="fact-item">
+          <div class="fact-icon">📍</div>
+          <div class="fact-info">
+            <span class="fact-label">Location</span>
+            <span class="fact-value">Haryana, India</span>
+          </div>
+        </div>
 
-    <!-- LEFT IMAGE -->
-    <div class="about-image-vertical">
-      <img src="assets/about.png" alt="Hardik working illustration">
+        <div class="fact-item">
+          <div class="fact-icon">🎓</div>
+          <div class="fact-info">
+            <span class="fact-label">Education</span>
+            <span class="fact-value">Pursuing B.Tech in Computer Science</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- When I'm Not Coding -->
+      <div class="about-card">
+        <h3>When I'm Not Coding</h3>
+        <div class="hobby-item">
+          <span class="hobby-icon">💻</span>
+          <span class="hobby-text">Surfing Web</span>
+        </div>
+        <div class="hobby-item">
+          <span class="hobby-icon">📚</span>
+          <span class="hobby-text">Reading</span>
+        </div>
+        <div class="hobby-item">
+          <span class="hobby-icon">🎵</span>
+          <span class="hobby-text">Music</span>
+        </div>
+      </div>
     </div>
 
-
     <!-- RIGHT CONTENT -->
-    <div class="about-text">
-      <p>
-        I am a 3rd-year Computer Science undergraduate at Lovely Professional University (LPU),
-        driven by a strong focus on core computer science fundamentals and building practical,
-        real-world software solutions. My journey so far has helped me develop a solid command
-        over Data Structures and Algorithms, strengthening my logical thinking and structured
-        problem-solving approach.
-      </p>
+    <div class="about-main">
+      <div class="about-card">
+        <h3 class="neon-title">My Journey</h3>
+        <p>
+          I'm <strong class="neon-text">Hardik Mehta</strong>, an <strong class="neon-text">AI/ML Engineer</strong> passionate about building intelligent systems that solve real-world problems. With a solid CS foundation, I specialize in Machine Learning, NLP, and data-driven development — designing, training, and deploying models that create measurable impact. I constantly grow through hands-on projects, competitive coding, and exploring the latest in AI research.
+        </p>
+      </div>
 
-      <p>
-        Alongside academics, I am actively exploring Machine Learning through both course 
-        projects and self-driven work, gaining hands-on experience in data preprocessing, 
-        model development, and evaluation. I consistently aim to bridge theoretical 
-        understanding with real application through meaningful and scalable projects.
-      </p>
-
-      <p>
-        I also focused on learning practical tools and workflows such as Git, Linux,
-        Docker, and basic DevOps practices to better understand real-world software
-        development and deployment. These experiences have shaped my mindset as a
-        learner who values clarity, consistency, and continuous improvement.
-      </p>
+      <div class="about-card">
+        <h3 class="neon-title">My Approach</h3>
+        <p>
+          I believe in building AI systems that are not just accurate but meaningful and explainable. Every model I build aims to solve real problems, improve lives, and deliver measurable impact. I value clean pipelines, reproducible experiments, rigorous evaluation, and continuous learning as the foundations of great AI engineering.
+        </p>
+      </div>
     </div>
 
   </div>
 </section>
 
+
+
 <!-- ================= SKILLS ================= -->
 <section class="skills" id="skills">
-  <h2 class="section-title">Skills & <span>Expertise</span></h2>
+  <h2 class="section-title">Skills &amp; <span>Expertise</span></h2>
 
   <div class="skills-grid">
 
     <!-- Programming -->
     <div class="skill-card">
       <h3>💻 Programming Languages</h3>
-      <div class="skill-tags">
-        <span>Java</span>
-        <span>Python</span>
-        <span>C++</span>
-        <span>C</span>
-        <span>JavaScript</span>
+      <div class="skills-list">
+        <div class="skill-item">
+          <span class="skill-item-icon">☕</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Java</span>
+            <span class="skill-item-desc">OOPs, Collections & Native Performance</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🐍</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Python</span>
+            <span class="skill-item-desc">Automation, ML & Data Processing</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🔷</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">C++</span>
+            <span class="skill-item-desc">High Performance & Lower Level Logic</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">📜</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">JavaScript</span>
+            <span class="skill-item-desc">Dynamic Interactivity & Web Development</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Core CS -->
     <div class="skill-card highlight">
       <h3>🧠 Core Computer Science</h3>
-      <div class="skill-tags">
-        <span>Data Structures</span>
-        <span>Algorithms</span>
-        <span>Arrays</span>
-        <span>Trees</span>
-        <span>Graphs</span>
-        <span>Dynamic Programming</span>
-        <span>OOPs</span>
-        <span>OS</span>
-        <span>DBMS</span>
+      <div class="skills-list">
+        <div class="skill-item">
+          <span class="skill-item-icon">🏗️</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Data Structures</span>
+            <span class="skill-item-desc">Arrrays, Trees & Graphs optimization</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">⚙️</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Algorithms</span>
+            <span class="skill-item-desc">DP, Greedy & Sliding Window techniques</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🧱</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">OOPs</span>
+            <span class="skill-item-desc">Abstraction, Encapsulation, Heritage</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">💾</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">DBMS / OS</span>
+            <span class="skill-item-desc">Relational DBs & Core Operating Systems</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- ML + NLP -->
     <div class="skill-card highlight">
-      <h3>🤖 Machine Learning & NLP</h3>
-      <div class="skill-tags">
-        <span>Regression</span>
-        <span>Classification</span>
-        <span>NLP</span>
-        <span>Text Preprocessing</span>
-        <span>Tokenization</span>
-        <span>TF-IDF</span>
-        <span>Word Embeddings</span>
-        <span>Scikit-learn</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
+      <h3>🤖 Machine Learning &amp; NLP</h3>
+      <div class="skills-list">
+        <div class="skill-item">
+          <span class="skill-item-icon">📈</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Regression / Class.</span>
+            <span class="skill-item-desc">Model building & Performance metrics</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">💬</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">NLP Core</span>
+            <span class="skill-item-desc">Tokenization, TF-IDF, Embeddings</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🛠️</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">ML Libraries</span>
+            <span class="skill-item-desc">Scikit-learn, Pandas, NumPy, NLTK</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- DevOps -->
     <div class="skill-card">
-      <h3>⚙️ DevOps & Tools</h3>
-      <div class="skill-tags">
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Linux</span>
-        <span>Docker</span>
-        <span>CI/CD</span>
-        <span>Shell</span>
+      <h3>⚙️ DevOps &amp; Tools</h3>
+      <div class="skills-list">
+        <div class="skill-item">
+          <span class="skill-item-icon">🐙</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Git & GitHub</span>
+            <span class="skill-item-desc">Version control & Collaborative coding</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🐧</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Linux / Shell</span>
+            <span class="skill-item-desc">Terminal mastery & Automation scripts</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🐳</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Docker / CI/CD</span>
+            <span class="skill-item-desc">Containerization & Deployment workflows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skill-card soft-skills">
+      <h3>🌟 Soft Skills</h3>
+      <div class="skills-list">
+        <div class="skill-item">
+          <span class="skill-item-icon">🤝</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Team Collaboration</span>
+            <span class="skill-item-desc">Work effectively in cross-functional teams</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🧩</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Problem Solving</span>
+            <span class="skill-item-desc">Analytical thinking & creative solutions</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">💬</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Communication</span>
+            <span class="skill-item-desc">Clear technical & non-technical communication</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">⚡</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Adaptability</span>
+            <span class="skill-item-desc">Quick learner, embraces new technologies</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-item-icon">🎯</span>
+          <div class="skill-item-info">
+            <span class="skill-item-name">Time Management</span>
+            <span class="skill-item-desc">Deadline-driven with consistent delivery</span>
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
-<!-- ================= TRAINING ================= -->
-<section class="training" id="training">
-  <h2 class="section-title">Training & <span>Certifications</span></h2>
 
-  <div class="training-wrapper">
-
-    <!-- Certificate Slider -->
-    <div class="training-image">
-      <img
-        src="assets/lpu-training.jpg"
-        class="certificate active"
-        alt="LPU Java Bootcamp Certificate"
-      />
-      <img
-        src="assets/pw.png"
-        class="certificate"
-        alt="PW Decode C++ with DSA Certificate"
-      />
-    </div>
-
-    <!-- Training Content -->
-    <div class="training-content">
-      <h3 id="certTitle">Placement Ace: Java Bootcamp</h3>
-      <p class="training-org" id="certOrg">
-        Centre for Professional Enhancement, Lovely Professional University
-      </p>
-      <p class="training-duration" id="certDuration">June 2025 – July 2025</p>
-
-      <ul id="certPoints">
-        <li>Strengthened core <strong>Data Structures & Algorithms</strong>.</li>
-        <li>Solved competitive problems on <strong>LeetCode & Codeforces</strong>.</li>
-        <li>Improved problem-solving speed and coding efficiency.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
 
 <!-- ================= PROJECTS ================= -->
 <section class="section" id="projects">
@@ -198,131 +317,368 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <h3>House Price Prediction Web App</h3>
-      <p>
-        Machine Learning web application that predicts house prices
-        using real-world datasets and regression models.
-      </p>
-      <ul>
-        <li>Built using Flask and Python</li>
-        <li>Feature engineering and label encoding</li>
-        <li>Trained on Kaggle housing dataset</li>
-      </ul>
-      <span class="tech">Python · Flask · Machine Learning</span>
-      <a href="https://github.com/Hardik88013/SCT_ML_1" target="_blank" class="project-link">
-        View on GitHub →
-      </a>
+      <div class="project-img-wrap ashirwad-slider">
+        <img src="assets/ashirwad_1.png" class="active" alt="Ashirwad Medicose Preview 1">
+        <img src="assets/ashirwad_2.png" alt="Ashirwad Medicose Preview 2">
+        <img src="assets/ashirwad_3.png" alt="Ashirwad Medicose Preview 3">
+        <img src="assets/ashirwad_4.png" alt="Ashirwad Medicose Preview 4">
+        <img src="assets/ashirwad_5.png" alt="Ashirwad Medicose Preview 5">
+      </div>
+      <div class="project-links-wrap">
+        <a href="https://github.com/Hardik88013/Ashirwad-Medicose" target="_blank" class="project-link-icon" title="View Source on GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://ashirwad-medicose.onrender.com/" target="_blank" class="project-link-icon video" title="Live Demo"><i class="fa-solid fa-link"></i></a>
+      </div>
+      <div class="project-content">
+        <h3>🏥 Ashirwad Medicose – Online Pharmacy Platform</h3>
+        <p>
+          A user-friendly web application for buying medicines online, designed to simplify the ordering process and ensure easy access to essential healthcare products.
+        </p>
+        <ul>
+          <li>Browse and purchase medicines with an intuitive and responsive interface</li>
+          <li>Real-time stock management and order tracking system</li>
+          <li>Secure user authentication and smooth checkout process</li>
+        </ul>
+        <span class="tech">Django · Python · AI Integration · SQLite</span>
+      </div>
     </div>
 
     <div class="project-card">
-      <h3>Personal Expense Tracker</h3>
-      <p>
-        Java-based desktop application for tracking and analyzing
-        daily expenses using core DSA concepts.
-      </p>
-      <ul>
-        <li>Java Swing GUI</li>
-        <li>Category-wise expense tracking</li>
-        <li>Sorting and monthly summaries</li>
-      </ul>
-      <span class="tech">Java · DSA · Java Swing</span>
-      <a href="https://github.com/Hardik88013/Personal-Expense-Tracker" target="_blank" class="project-link">
-        View on GitHub →
-      </a>
+      <div class="project-img-wrap">
+        <a href="https://www.linkedin.com/posts/hardik88013_java-swing-expensetracker-activity-7350566781440200705-iDNB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADzyEgABfU71F7fDzOR4vItjkmSn80DK3tA" target="_blank">
+          <img src="assets/expense_tracker_preview.png" alt="Personal Expense Tracker">
+        </a>
+      </div>
+      <div class="project-links-wrap">
+        <a href="https://github.com/Hardik88013/Personal-Expense-Tracker" target="_blank" class="project-link-icon" title="View Source on GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/posts/hardik88013_java-swing-expensetracker-activity-7350566781440200705-iDNB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADzyEgABfU71F7fDzOR4vItjkmSn80DK3tA" target="_blank" class="project-link-icon video" title="Watch Demo Video"><i class="fa-solid fa-play"></i></a>
+      </div>
+      <div class="project-content">
+        <h3><a href="https://www.linkedin.com/posts/hardik88013_java-swing-expensetracker-activity-7350566781440200705-iDNB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADzyEgABfU71F7fDzOR4vItjkmSn80DK3tA" target="_blank" style="text-decoration:none; color:inherit;">Personal Expense Tracker</a></h3>
+        <p>
+          A robust Java-based desktop application designed for efficiently tracking, managing, and analyzing personal daily expenses using optimized data structures and algorithms.
+        </p>
+        <ul>
+          <li>Feature-rich Swing GUI providing an intuitive user experience for financial management.</li>
+          <li>Optimized for handling 100+ records with category-wise filtering and search functions.</li>
+          <li>Improves financial analysis efficiency by ~60% through automated monthly summaries.</li>
+        </ul>
+        <span class="tech">Java · DSA · Java Swing</span>
+      </div>
     </div>
 
     <div class="project-card">
-      <h3>Crop Recommendation System</h3>
-      <p>
-        ML system that recommends suitable crops based on
-        soil nutrients, rainfall, and climate conditions.
-      </p>
-      <ul>
-        <li>Data preprocessing & feature selection</li>
-        <li>Regression-based prediction</li>
-        <li>Model evaluation using RMSE</li>
-      </ul>
-      <span class="tech">Python · Pandas · Scikit-learn</span>
-      <a href="https://github.com/Hardik88013/Crop-Recommendation-System" target="_blank" class="project-link">
-        View on GitHub →
-      </a>
-    </div>
-
-  </div>
-</section>
-<section class="section" id="internship">
-  <h2 class="section-title">Internship <span>Experience</span></h2>
-
-  <div class="internship-layout">
-
-    <!-- LEFT IMAGE -->
-    <div class="internship-image">
-      <img src="assets/internship.png" alt="Internship Illustration">
-    </div>
-
-    <!-- RIGHT CONTENT -->
-    <div class="experience-card">
-      <h3>Machine Learning Intern — SkillCraft Technology</h3>
-      <span class="duration">Remote · 2025</span>
-      <ul>
-        <li>Worked on real-world Machine Learning problems using Python</li>
-        <li>Performed data preprocessing, feature selection, and model evaluation</li>
-        <li>Implemented supervised learning algorithms on structured datasets</li>
-        <li>Improved model performance using evaluation metrics</li>
-      </ul>
+      <div class="project-img-wrap">
+        <img src="assets/house_prediction.png" alt="House Price Prediction">
+      </div>
+      <div class="project-links-wrap">
+        <a href="https://github.com/Hardik88013/House_Price_Prediction_Web_App" target="_blank" class="project-link-icon" title="View Source on GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="project-content">
+        <h3>🏠 House Price Prediction – Flask Web App</h3>
+        <p>
+          A machine learning-powered web application that predicts real estate prices with high precision based on key architectural and neighborhood features.
+        </p>
+        <ul>
+          <li>Interactive Flask interface for real-time price estimation from user inputs</li>
+          <li>Feature engineering and regression analysis to identify core pricing drivers</li>
+          <li>Optimized for accuracy using diverse historical housing data</li>
+        </ul>
+        <span class="tech">Python · Scikit-learn · Flask · HTML/CSS</span>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- ================= ACHIEVEMENTS ================= -->
-<section class="achievements" id="achievements">
-  <h2 class="section-title">Achievements & <span>Practice</span></h2>
+<!-- ================= TRAINING / CERTIFICATES ================= -->
+<section class="training" id="training">
+  <h2 class="section-title">Training &amp; <span>Certifications</span></h2>
+  <p class="training-subtitle">Click any certificate to view it in full size</p>
 
-  <div class="achievements-grid">
+  <div class="certs-grid">
 
-    <!-- LeetCode -->
-    <div class="achievement-card reveal">
-      <div class="achievement-image">
-        <img src="assets/leetcode.png" alt="LeetCode">
-
+    <!-- Certificate 1: Gen AI NASSCOM -->
+    <div class="cert-card reveal" onclick="openLightbox('assets/nasscom-gen-ai.png', 'Gen AI NASSCOM Skill Development')">
+      <div class="cert-img-wrap">
+        <img src="assets/nasscom-gen-ai.png" alt="Gen AI NASSCOM Certificate" />
+        <div class="cert-overlay"><span>🔍 View Full</span></div>
       </div>
-
-      <h3><span class="counter" data-target="400">0</span>+ Problems Solved</h3>
-      <p>
-        Solved a wide range of problems covering arrays, trees, graphs,
-        dynamic programming, and greedy techniques.
-      </p>
+      <div class="cert-info">
+        <h3>Gen AI NASSCOM</h3>
+        <p class="cert-org">SFJ / NASSCOM</p>
+        <p class="cert-date">Feb 20, 2026</p>
+      </div>
     </div>
 
-    <!-- GFG -->
-    <div class="achievement-card reveal">
-      <div class="achievement-image">
-        <img src="assets/gfg.png" alt="GeeksforGeeks">
-        
+    <!-- Certificate 2: SQL Advanced -->
+    <div class="cert-card reveal" onclick="openLightbox('assets/hackerrank-sql-advanced.png', 'SQL (Advanced) Skill Certificate')">
+      <div class="cert-img-wrap">
+        <img src="assets/hackerrank-sql-advanced.png" alt="SQL Advanced Certificate" />
+        <div class="cert-overlay"><span>🔍 View Full</span></div>
       </div>
-
-      <h3><span class="counter" data-target="60">0</span>+ Problems Solved</h3>
-      <p>
-        Strengthened core DSA concepts through consistent practice
-        and structured problem-solving.
-      </p>
+      <div class="cert-info">
+        <h3>SQL (Advanced)</h3>
+        <p class="cert-org">HackerRank</p>
+        <p class="cert-date">Feb 14, 2026</p>
+      </div>
     </div>
-    <div class="achievement-card gsoc-card reveal">
-  <div class="achievement-image">
-    <img src="assets/contributors-badge.jpg" alt="GSSoC 2025 Tech Contributor">
+
+    <!-- Certificate 3: Java Bootcamp -->
+    <div class="cert-card reveal" onclick="openLightbox('assets/lpu-training.jpg', 'Placement Ace: Java Bootcamp')">
+      <div class="cert-img-wrap">
+        <img src="assets/lpu-training.jpg" alt="LPU Java Bootcamp Certificate" />
+        <div class="cert-overlay"><span>🔍 View Full</span></div>
+      </div>
+      <div class="cert-info">
+        <h3>Placement Ace: Java Bootcamp</h3>
+        <p class="cert-org">Centre for Professional Enhancement, LPU</p>
+        <p class="cert-date">July 2025</p>
+      </div>
+    </div>
+
+    <!-- Certificate 4: Computational Theory -->
+    <div class="cert-card reveal" onclick="openLightbox('assets/infosys-computational-theory.png', 'Computational Theory: Language Principle & Finite Automata')">
+      <div class="cert-img-wrap">
+        <img src="assets/infosys-computational-theory.png" alt="Infosys Springboard Certificate" />
+        <div class="cert-overlay"><span>🔍 View Full</span></div>
+      </div>
+      <div class="cert-info">
+        <h3>Computational Theory</h3>
+        <p class="cert-org">Infosys Springboard</p>
+        <p class="cert-date">Aug 23, 2025</p>
+      </div>
+    </div>
+
+    <!-- Certificate 5: Affective Computing -->
+    <div class="cert-card reveal" onclick="openLightbox('assets/nptel-affective-computing.png', 'Affective Computing (78% Score)')">
+      <div class="cert-img-wrap">
+        <img src="assets/nptel-affective-computing.png" alt="Affective Computing NPTEL Certificate" />
+        <div class="cert-overlay"><span>🔍 View Full</span></div>
+      </div>
+      <div class="cert-info">
+        <h3>Affective Computing</h3>
+        <p class="cert-org">NPTEL Elite Certificate</p>
+        <p class="cert-date">April 2025</p>
+      </div>
+    </div>
+
+    <!-- Certificate 6: Decode C++ with DSA -->
+    <div class="cert-card reveal" onclick="openLightbox('assets/pw.png', 'Decode C++ with DSA – PW Skills')">
+      <div class="cert-img-wrap">
+        <img src="assets/pw.png" alt="PW Decode C++ with DSA Certificate" />
+        <div class="cert-overlay"><span>🔍 View Full</span></div>
+      </div>
+      <div class="cert-info">
+        <h3>Decode C++ with DSA</h3>
+        <p class="cert-org">Physics Wallah (PW Skills)</p>
+        <p class="cert-date">June 2024</p>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <h3>GSSOC 2025 – Tech Contributor</h3>
-  <p>
-    Recognized as a <strong>Tech Contributor</strong> in GSSOC 2025
-    for contributing to open-source projects and collaborative development.
-  </p>
+<!-- ================= LIGHTBOX ================= -->
+<div id="certLightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+    <p id="lightboxCaption"></p>
+  </div>
 </div>
 
 
+
+<!-- ================= ACHIEVEMENTS (TAB STRUCTURE) ================= -->
+<section class="achievements" id="achievements">
+  <h2 class="section-title">🏆 <span>Achievements</span></h2>
+
+  <!-- Tab Buttons -->
+  <div class="tab-buttons">
+    <button class="tab-btn active" data-tab="coding">📊 Coding Platforms</button>
+    <button class="tab-btn" data-tab="gfg">💻 GeeksforGeeks</button>
+    <button class="tab-btn" data-tab="hackathons">🚀 Hackathons</button>
+    <button class="tab-btn" data-tab="ms-learn">☁️ Microsoft Learn</button>
+    <button class="tab-btn" data-tab="highlights">🎯 Highlights</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+
+    <!-- Tab 1: Coding Platforms -->
+    <div class="tab-pane active" id="tab-coding">
+      <div class="tab-pane-inner">
+        <div class="tab-image-side">
+          <div class="achievement-image">
+            <img src="assets/leetcode.png" alt="LeetCode" />
+          </div>
+        </div>
+        <div class="tab-text-side">
+          <h3>LeetCode &amp; Problem Solving</h3>
+          <ul class="ach-list">
+            <li>Solved <strong>300+</strong> problems on LeetCode, strengthening DSA, optimization, and logical thinking</li>
+            <li>Maintained a <strong>17+ day coding streak</strong>, showing consistency and discipline</li>
+            <li>Focused on core topics like Arrays, DP, Graphs, and Sliding Window</li>
+            <li>Improved problem-solving speed for real coding rounds (Mettl / CoCubes level)</li>
+          </ul>
+          <div class="ach-stat-row">
+            <div class="ach-stat"><span class="counter" data-target="300">0</span>+<p>Problems</p></div>
+            <div class="ach-stat"><span class="counter" data-target="17">0</span>+<p>Day Streak</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: GeeksforGeeks -->
+    <div class="tab-pane" id="tab-gfg">
+      <div class="tab-pane-inner">
+        <div class="tab-image-side">
+          <div class="achievement-image">
+            <img src="assets/gfg.png" alt="GeeksforGeeks" />
+          </div>
+        </div>
+        <div class="tab-text-side">
+          <h3>Concept Building &amp; Practice</h3>
+          <ul class="ach-list">
+            <li>Solved <strong>80+</strong> problems on GeeksforGeeks</li>
+            <li>Practiced a wide range of topics:</li>
+          </ul>
+          <div class="topic-tags">
+            <span>Data Structures</span>
+            <span>Recursion &amp; Backtracking</span>
+            <span>Dynamic Programming</span>
+            <span>Sorting</span>
+            <span>Searching</span>
+          </div>
+          <p class="ach-desc">Built strong fundamentals for technical interviews through structured problem-solving.</p>
+          <div class="ach-stat-row">
+            <div class="ach-stat"><span class="counter" data-target="80">0</span>+<p>Problems</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Hackathons -->
+    <div class="tab-pane" id="tab-hackathons">
+      <div class="tab-pane-inner">
+        <div class="tab-image-side">
+          <div class="achievement-image hack-image">
+            <div class="hack-emoji">🚀</div>
+          </div>
+        </div>
+        <div class="tab-text-side">
+          <h3>Hackathons & Competitions</h3>
+          <p class="ach-desc">Participated in <strong>2 Hackathons</strong>, building solutions under time constraints.</p>
+          <div class="hack-list">
+            <div class="hack-item green">
+              <span class="hack-dot"></span>
+              <div>
+                <strong>Hackathon 2024</strong>
+                <p>Competed and delivered a working prototype</p>
+              </div>
+            </div>
+            <div class="hack-item blue">
+              <span class="hack-dot"></span>
+              <div>
+                <strong>Code-A-Haunt 3.0</strong>
+                <p>National-Level Inter-University Hackathon by CodingBlocks LPU (March 2026)</p>
+              </div>
+            </div>
+          </div>
+          <div class="topic-tags" style="margin-top:16px">
+            <span>Team Collaboration</span>
+            <span>Rapid Prototyping</span>
+            <span>Problem Solving Under Pressure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Microsoft Learn -->
+    <div class="tab-pane" id="tab-ms-learn">
+      <div class="tab-pane-inner">
+        <div class="tab-image-side">
+          <div class="achievement-image ms-badge-image">
+            <div class="ms-logo">Microsoft</div>
+          </div>
+        </div>
+        <div class="tab-text-side">
+          <h3>Microsoft Learn AI <span>Badges</span></h3>
+          <p class="ach-desc">Validated skills in AI Engineering and Azure Cloud Solutions.</p>
+          
+          <div class="hack-list">
+            <div class="hack-item blue">
+              <span class="hack-dot"></span>
+              <div>
+                <strong>Prepare for AI engineering (Trophy)</strong>
+                <p>Completed on 11/7/2023 – Mastering Azure AI services and model deployment.</p>
+              </div>
+            </div>
+            <div class="hack-item green">
+              <span class="hack-dot"></span>
+              <div>
+                <strong>Introduction to AI concepts</strong>
+                <p>Completed on 7/3/2025 – Core AI, ML, and Responsible AI fundamentals.</p>
+              </div>
+            </div>
+            <div class="hack-item blue">
+              <span class="hack-dot"></span>
+              <div>
+                <strong>Prepare to develop AI solutions on Azure</strong>
+                <p>Completed on 11/7/2023 – Architecture and development of Azure-based AI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: Highlights -->
+    <div class="tab-pane" id="tab-highlights">
+      <div class="tab-pane-inner highlights-pane">
+        <div class="tab-text-side highlights-text">
+          <h3>Quick Impact Points</h3>
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <span class="hi-icon">📈</span>
+              <h4>Consistent Practice</h4>
+              <p>Daily coding across LeetCode &amp; GFG platforms</p>
+            </div>
+            <div class="highlight-card">
+              <span class="hi-icon">🧠</span>
+              <h4>Strong DSA Foundation</h4>
+              <p>Deep knowledge of Data Structures &amp; Algorithms</p>
+            </div>
+            <div class="highlight-card">
+              <span class="hi-icon">🌐</span>
+              <h4>Real-World Projects</h4>
+              <p>Strong participation in competitive coding and ML projects</p>
+            </div>
+            <div class="highlight-card">
+              <span class="hi-icon">⚡</span>
+              <h4>Quick Learner</h4>
+              <p>Rapidly adapts to new technologies and frameworks</p>
+            </div>
+            <div class="highlight-card">
+              <span class="hi-icon">🏆</span>
+              <h4>Open Source</h4>
+              <p>GSSoC 2025 Tech Contributor badge earned</p>
+            </div>
+            <div class="highlight-card">
+              <span class="hi-icon">🎯</span>
+              <h4>Problem-Solving Mindset</h4>
+              <p>Systematic approach to breaking down complex problems</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+
+
 
 <!-- ================= EDUCATION ================= -->
 <section class="education" id="education">
@@ -332,12 +688,11 @@
 
     <div class="education-card">
       <span class="edu-year">2023 – Present</span>
-      <h3>B.Tech – Computer Science & Engineering</h3>
+      <h3>B.Tech – Computer Science &amp; Engineering</h3>
       <p class="edu-place">Lovely Professional University (LPU), Punjab</p>
       <p class="edu-desc">
-        Building a strong foundation in Data Structures, Algorithms, 
-        Operating Systems, Databases, and Machine Learning through 
-        academics and hands-on projects.
+        Graduation with 7.69 CGPA (Current). Building a strong foundation in Data Structures, Algorithms, 
+        Operating Systems, Databases, and Machine Learning.
       </p>
     </div>
 
@@ -346,7 +701,7 @@
       <h3>Senior Secondary (12th)</h3>
       <p class="edu-place">Rajendra Public School, Sirsa</p>
       <p class="edu-desc">
-        Focused on Mathematics and Computer Science, developing early
+        Completed 12th with 72.8%. Focused on Mathematics and Computer Science, developing early
         interest in programming and logical problem-solving.
       </p>
     </div>
@@ -356,13 +711,268 @@
       <h3>Secondary (10th)</h3>
       <p class="edu-place">Satluj Public School, Sirsa</p>
       <p class="edu-desc">
-        Strengthened analytical thinking and discipline, laying the
+        Completed 10th with 76%. Strengthened analytical thinking and discipline, laying the
         groundwork for technical learning.
       </p>
     </div>
 
   </div>
 </section>
+
+<!-- ================= RESUME SECTION ================= -->
+<section class="resume-section" id="resume">
+  <h2 class="section-title">My <span>Resume</span></h2>
+
+  <div class="resume-contact">
+    <div class="contact-pill">
+      <span>📧</span> mehtahardik88013@gmail.com
+    </div>
+    <div class="contact-pill">
+      <span>📞</span> +91 9467230806
+    </div>
+    <a href="https://linkedin.com/in/hardik88013" target="_blank" class="contact-pill">
+      <span>💼</span> LinkedIn
+    </a>
+    <a href="https://github.com/Hardik88013" target="_blank" class="contact-pill">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+
+  <div class="resume-tabs">
+    <button class="resume-tab-btn active" data-tab="res-edu">Education</button>
+    <button class="resume-tab-btn" data-tab="res-skills">Skills</button>
+    <button class="resume-tab-btn" data-tab="res-projects">Projects</button>
+    <button class="resume-tab-btn" data-tab="res-extra">Extracurricular</button>
+    <button class="resume-tab-btn" data-tab="res-certs">Certificates</button>
+  </div>
+
+  <div class="resume-content">
+    
+    <!-- Education Pane -->
+    <div class="resume-pane active" id="res-edu">
+      <div class="resume-card">
+        <div class="card-header">
+          <div>
+            <h3>B.Tech – Computer Science & Engineering (AI/ML)</h3>
+            <p class="card-org">Lovely Professional University (LPU), Phagwara</p>
+          </div>
+          <span class="card-date">Expected 2026</span>
+        </div>
+        <ul>
+          <li><strong>Current CGPA: 7.69 / 10</strong></li>
+          <li>Focusing on Artificial Intelligence, Machine Learning, and Advanced Data Structures</li>
+          <li>Active participation in technical hackathons and placement preparation programs</li>
+        </ul>
+      </div>
+
+      <div class="resume-card">
+        <div class="card-header">
+          <div>
+            <h3>Senior Secondary (12th) – CBSE</h3>
+            <p class="card-org">Rajendra Public School, Panjuana</p>
+          </div>
+          <span class="card-date">2021 – 2022</span>
+        </div>
+        <ul>
+          <li><strong>Percentage: 72.8%</strong></li>
+          <li>Major subjects: Physics, Chemistry, Mathematics, and Computer Science</li>
+        </ul>
+      </div>
+
+      <div class="resume-card">
+        <div class="card-header">
+          <div>
+            <h3>Matriculation (10th) – CBSE</h3>
+            <p class="card-org">Satluj Public School, Sirsa</p>
+          </div>
+          <span class="card-date">2019 – 2020</span>
+        </div>
+        <ul>
+          <li><strong>Percentage: 76%</strong></li>
+          <li>Academic excellence with strong foundation in logical and analytical thinking</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Skills Pane -->
+    <div class="resume-pane" id="res-skills">
+      <div class="resume-card">
+        <div class="card-type">Programming & Foundations</div>
+        <h3>Core Technical Skills</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">C</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">DSA</span>
+          <span class="tech-tag">HTML & CSS</span>
+        </div>
+      </div>
+      <div class="resume-card">
+        <div class="card-type">Libraries & Frameworks</div>
+        <h3>AI, Data & Web</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">NumPy</span>
+          <span class="tech-tag">Scikit-learn</span>
+          <span class="tech-tag">Flask</span>
+          <span class="tech-tag">Matplotlib</span>
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">Linear Regression</span>
+        </div>
+      </div>
+      <div class="resume-card">
+        <div class="card-type">Tools & Platforms</div>
+        <h3>Environment & Soft Skills</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Git & GitHub</span>
+          <span class="tech-tag">Linux</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Problem Solving</span>
+          <span class="tech-tag">Team Player</span>
+          <span class="tech-tag">Adaptability</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Pane -->
+    <div class="resume-pane" id="res-projects">
+      <div class="resume-card">
+        <div class="card-type">Project</div>
+        <div class="card-header">
+          <h3>Personal Expense Tracker</h3>
+          <span class="card-date">July 2025</span>
+        </div>
+        <ul>
+          <li>Built a robust Java application using core DSA for handling <strong>100+ expense records</strong> efficiently.</li>
+          <li>Developed an interactive Swing GUI with category-wise filtering, improving analysis <strong>efficiency by ~60%</strong>.</li>
+          <li>Implemented high/low detection and automated monthly summaries.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Java Swing</span>
+          <span class="tech-tag">DSA</span>
+        </div>
+      </div>
+      <div class="resume-card">
+        <div class="card-type">Project</div>
+        <div class="card-header">
+          <h3>Crop Recommendation System</h3>
+          <span class="card-date">March 2025</span>
+        </div>
+        <ul>
+          <li>Trained a Linear Regression model on NPK and climate data with <strong>~20% accuracy gain</strong>.</li>
+          <li>Performed end-to-end preprocessing and optimized model using R² score and RMSE metrics.</li>
+          <li>Developed a lightweight UI for instant parameter evaluation and prediction.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Scikit-learn</span>
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">Linear Regression</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extracurricular Pane -->
+    <div class="resume-pane" id="res-extra">
+      <div class="resume-card">
+        <div class="card-type">Professional Training</div>
+        <div class="card-header">
+          <h3>Placement Academy Program</h3>
+          <span class="card-date">Jan 2025 – July 2025</span>
+        </div>
+        <p class="card-org">Center for Professional Enhancement, LPU</p>
+        <ul>
+          <li>Intensive training in technical interview preparation, aptitude, and soft skills development.</li>
+          <li>Focused on industry-relevant problem solving and mock interview sessions.</li>
+        </ul>
+      </div>
+
+      <div class="resume-card">
+        <div class="card-type">Specialized Course</div>
+        <div class="card-header">
+          <h3>Data Science for Engineers</h3>
+          <span class="card-date">July 2024 – Sep 2024</span>
+        </div>
+        <p class="card-org">NPTEL Certificate</p>
+        <ul>
+          <li>Comprehensive study of data analysis techniques, statistical modeling, and engineering applications.</li>
+          <li>Gained proficiency in interpreting complex datasets and driving actionable insights.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certificates Pane -->
+    <div class="resume-pane" id="res-certs">
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Gen AI NASSCOM</h3>
+          <span class="card-date">Feb 2026</span>
+        </div>
+        <p class="card-org">SFJ / NASSCOM</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>SQL (Advanced)</h3>
+          <span class="card-date">Feb 2026</span>
+        </div>
+        <p class="card-org">HackerRank</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Computational Theory: Language & Finite Automata</h3>
+          <span class="card-date">Aug 2025</span>
+        </div>
+        <p class="card-org">Infosys Springboard</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Affective Computing</h3>
+          <span class="card-date">Apr 2025</span>
+        </div>
+        <p class="card-org">NPTEL Elite Certificate</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Internal Hackathon Winner (SIH 2024)</h3>
+          <span class="card-date">Sept 2024</span>
+        </div>
+        <p class="card-org">Smart India Hackathon, LPU Phagwara</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Intro to Gen AI</h3>
+          <span class="card-date">2024</span>
+        </div>
+        <p class="card-org">Google Cloud Certificate</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Coding Ninja's CodeKaze</h3>
+          <span class="card-date">2024</span>
+        </div>
+        <p class="card-org">Competitive Programming Certificate, LPU</p>
+      </div>
+      <div class="resume-card">
+        <div class="card-header">
+          <h3>Introduction to Python</h3>
+          <span class="card-date">2023</span>
+        </div>
+        <p class="card-org">Sololearn Certificate</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="resume-download">
+    <a href="assets/hardik cv.pdf" download class="btn primary download-btn">
+      <span>📄</span> Download Resume
+    </a>
+  </div>
+</section>
+
 <!-- ================= CONTACT ================= -->
 <section class="contact" id="contact">
   <h2 class="section-title">
@@ -370,7 +980,7 @@
   </h2>
 
   <p class="contact-subtitle">
-    Ready to collaborate on exciting projects? Let’s connect and build something impactful together.
+    Ready to collaborate on exciting projects? Let's connect and build something impactful together.
   </p>
 
   <div class="contact-grid">
@@ -405,7 +1015,7 @@
 
       <h4 class="follow-title">Follow Me</h4>
       <div class="follow-icons">
-        <a href="https://github.com/Hardik88013" target="_blank">🐙</a>
+        <a href="https://github.com/Hardik88013" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/hardik88013" target="_blank">💼</a>
       </div>
     </div>
@@ -422,7 +1032,6 @@
         ✉️ Send Email
       </a>
 
-
       <small class="availability">
         Available for internships, freelance projects, and full-time roles
       </small>
@@ -433,6 +1042,11 @@
 
 
 <footer>
+  <div class="back-to-home-wrap">
+    <a href="#home" class="back-to-home-btn">
+      <i class="fa-solid fa-arrow-up"></i> Go Back to Home
+    </a>
+  </div>
   © 2026 Hardik · All Rights Reserved
 </footer>
 
